@@ -1,0 +1,16 @@
+MangoDB inistialize
+# On macOS with MongoDB installed via Homebrew
+brew services start mongodb-community
+
+Start the back
+go run main.go
+
+Test the back
+# Register
+curl -X POST http://localhost:8080/register -H "Content-Type: application/json" -d '{"username":"testuser","password":"testpass"}'
+
+# Login
+curl -X POST http://localhost:8080/login -H "Content-Type: application/json" -d '{"username":"testuser","password":"testpass"}'
+
+# Get Users
+curl http://localhost:8080/users
